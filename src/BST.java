@@ -6,7 +6,7 @@ public class BST {
 	 * Invariant for this Binary Search Tree:
 	 * 
 	 * 1. the root node in the tree stored in instance variable root, of type
-	 * BSTNode
+	 * BSTNode The root node will be empty by default.
 	 * 
 	 */
 		
@@ -131,7 +131,10 @@ public class BST {
 	//depth method internet source:
 	//https://makeinjava.com/find-height-binary-tree-java-dfs-recursive-algorithm-example/
 	public int depth() {
-		return depth(root);
+		if(root == null) {
+			return -1;
+		}
+		return depth(root) - 1;
 	}
 	private int depth(BSTNode cursor) {
 		if(cursor == null) {
